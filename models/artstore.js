@@ -1,39 +1,53 @@
 const mongoose = require('./connection.js')
 
-const artStoreSchema = new mongoose.Schema({
+const StoreSchema = mongoose.Schema({
+    name: String,
     address: String,
     yearsOpen: Number,
     website: String,
     manager: String,
-    availableClasses: Boolean,
+    availableClasses: Boolean
 })
 
-const artStoreCollection = mongoose.model('artStore', artStoreSchema)
+const StoreCollection = mongoose.model('Store', StoreSchema)
+
+function createStore() {
+    return StoreCollection.create({
+    name: "",
+    address: "",
+    yearsOpen: 0,
+    website: "",
+    manager: "",
+    availableClasses: true
+    })
+}
 
 function getAllStores() {
-    return artStoreCollection.find()
+    return StoreCollection.find()
 }
 
 function getOneStore(storeId) {
-    return artStoreCollection.findById(storeId)
+    return StoreCollection.findById(storeId)
 }
 
 function addNewStore(newStore) {
-    return artStoreCollection.create(newStore)
+    return StoreCollection.create( [newStore] );
 }
 
-function updateStore(updateId, newStore) {
-    return artStoreCollection.findByIdAndUpdate(updateId, newStore)
+function updateStore(storeUpdateId) {
+    return StoreCollection.updateOne(storeUpdateId)
 }
 
-function deleteStore(deleteId) {
-    return artStoreCollection.findByIdAndDelete(deleteId)
+function deleteStore(storeId) {
+    return StoreCollection.deleteOne({_id: storeId})
 }
 
 module.exports = {
     addNewStore,
+    createStore,
     deleteStore,
     getAllStores,
     getOneStore,
-    updateStore
+    updateStore,
 }
+

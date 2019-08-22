@@ -8,24 +8,44 @@ const materialsSchema = new mongoose.Schema({
     soldYearRound: Boolean
 })
 
-const materialsCollection = mongoose.model('materials', materialsSchema)
+const MaterialsCollection = mongoose.model('materials', materialsSchema)
 
-function getAllClasses() {
-    return materialsCollection.find()
+
+function createMaterial() {
+    return MaterialsCollection.create({
+    type: "",
+    quantity: 0,
+    brandName: "",
+    cost: 0,
+    soldYearRound: true
+    })
 }
 
-function getOneClass() {
-    return materialsCollection.findById()
+function getAllMaterials() {
+    return MaterialsCollection.find()
 }
 
-function addNewClass() {
-    return materialsCollection.create()
+function getOneMaterial(materialId) {
+    return MaterialsCollection.findById(materialId)
 }
 
-function updateClass() {
-    return materialsCollection.findByIdAndUpdate()
+function addNewMaterial(newMaterial) {
+    return MaterialsCollection.create( [newMaterial] )
 }
 
-function deleteClass() {
-    return materialsCollection.findByIdAndDelete()
+function updateMaterial(materialUpdateId) {
+    return MaterialsCollection.findByIdAndUpdate(materialUpdateId)
+}
+
+function deleteMaterial(materialId) {
+    return MaterialsCollection.findByIdAndDelete(materialId)
+}
+
+module.exports = {
+    addNewMaterial,
+    createMaterial,
+    deleteMaterial,
+    getAllMaterials,
+    getOneMaterial,
+    updateMaterial
 }

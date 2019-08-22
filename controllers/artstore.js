@@ -9,34 +9,48 @@ const storeRouter = express.Router()
 
 
 //ALL STORES
-storeRouter.get('/', function(req, res){
-    storeApi.getAllStores().then((storesInDB) => {
-        res.send(storesInDB);
+storeRouter.get('/', function(req, res) {
+    storeApi.getAllStores().then((stores) => {
+        res.render('allStores');
+    })
+})
+//ADD STORE
+//redirect added store id to allStores page once user clicks button
+
+
+storeRouter.get('/createStore', function(req, res){
+    storeApi.addNewStore(req.body).then((_id) => {
+    res.render('stores/createStore')
     })
 })
 
+
 //ONE STORE
 storeRouter.get('/:storeId', function(req, res){
-    //storeApi.getOneStore().then()
-    res.send(storeApi.getOneStore(req.params.index));
+    storeApi.getOneStore(req.params.index).then((store) => {
+        res.render('oneStore')
+    })
 })
 
-//ADD STORE
-storeRouter.post('/new', function(req, res){
-    storeApi.addNewStore(req.body)
-    res.status(200).end();
-})
 
 //EDIT STORE
-storeRouter.put('/artstore/:storeId', function(req,res){
-    storeApi.updateStore(req.params.index, req.body);
-    res.status(200).end();
+
+storeRouter.put('/:storeId', function(req,res){
+    storeApi.updateStore(req.params.index, req.body).then(() => {
+    res.redirect('stores/editStore')   
+    });
+
 })
 
 //DELETE STORE
 storeRouter.delete('/artstore/:storeId', function(req, res) {
-    storeApi.deleteStore()
+    storeApi.deleteStore(req.params.index).then(() => {
+    res.redirect('/stores');
+    })
 })
+
+
+
 
 
 

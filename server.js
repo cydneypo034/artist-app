@@ -18,6 +18,7 @@ const methodOverride = require('method-override')
  *
  */
 const { storeRouter } = require('./controllers/artstore.js')
+const { materialRouter } = require('./controllers/favorite-material.js')
 
 
 /* Step 3
@@ -28,7 +29,7 @@ const { storeRouter } = require('./controllers/artstore.js')
 /* Step 3.a
  * ...to parse the body of the HTTP requests from a URL encoded string 
  */
-app.use(express.urlencoded({extended: true}))
+//app.use(express.urlencoded({extended: true}))
 
 /* Step 3.b 
  *
