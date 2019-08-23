@@ -32,15 +32,14 @@ storeRouter.get('/:materialId', function(req, res){
     })
 })
 
-
-storeRouter.get('/:storeId', function(req, res){
-    storeApi.getOneStore(req.params.index).then((store) => {
-        res.render('stores/oneStore')
+storeRouter.get('/:id', function(req, res){
+    storeApi.getOneStore(req.params.id).then((storeId) => {
+        res.render('one store', {storeId})
     })
 })
 
-
 /*
+
 //EDIT STORE
 
 storeRouter.put('/:storeId', function(req,res){

@@ -19,7 +19,7 @@ materialRouter.get('/', function(req, res) {
 
 materialRouter.get('/createMaterial', function(req, res){
     materialApi.addNewMaterial(req.body).then((_id) => {
-    res.render('materials/createMaterial')
+    res.render('materials/oneMaterial')
     })
 })
 
@@ -28,7 +28,7 @@ materialRouter.get('/createMaterial', function(req, res){
 //ONE STORE
 materialRouter.get('/:materialId', function(req, res){
     materialApi.getOneMaterial(req.params.materialId).then((material) => {
-        res.render('oneMaterial', {material, materialId})
+        res.render('materials/oneMaterial')
     })
 })
 
