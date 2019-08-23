@@ -46,7 +46,7 @@ storeRouter.get('/:materialId', function(req, res){
 
 storeRouter.get('/:index', function(req, res){
     storeApi.getOneStore(req.params.index).then((storeId) => {
-        res.render('stores/oneStore', {storeId})
+        res.render('artstore/oneStore', {storeId})
     })
 })
 
@@ -56,15 +56,15 @@ storeRouter.get('/:index', function(req, res){
 
 storeRouter.put('/:storeId', function(req,res){
     storeApi.updateStore(req.params.index, req.body).then(() => {
-    res.redirect('stores/updateStore')   
+    res.redirect('stores/oneStore')   
     });
 
 })
 
 //DELETE STORE
-storeRouter.delete('/artstore/:storeId', function(req, res) {
+storeRouter.delete('/', function(req, res) {
     storeApi.deleteStore(req.params.index).then(() => {
-    res.redirect('/stores');
+    res.redirect('artstore/oneStore');
     })
 })
 
