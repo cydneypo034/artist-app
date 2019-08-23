@@ -4,6 +4,6 @@ materialApi.addNewMaterial().then((newMaterial) => {
     console.log(newMaterial)
 })
 
-storeApi.getAllMaterials().then((allMaterialsInDB) => {
+materialApi.getAllMaterials().then((allMaterialsInDB) => {
     console.log(allMaterialsInDB)
 })

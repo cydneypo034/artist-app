@@ -26,9 +26,15 @@ storeRouter.get('/createStore', function(req, res){
 
 
 //ONE STORE HAS THE MATERIAL LISTED
-storeRouter.get('/:storeId', function(req, res){
+storeRouter.get('/:materialId', function(req, res){
     storeApi.getOneStore(req.params.index).then((store) => {
         res.render('materials/createMaterials')
+    })
+})
+
+storeRouter.get('/:storeId', function(req, res){
+    storeApi.getOneStore(req.params.index).then((store) => {
+        res.render('stores/oneStore')
     })
 })
 
@@ -36,7 +42,7 @@ storeRouter.get('/:storeId', function(req, res){
 
 storeRouter.put('/:storeId', function(req,res){
     storeApi.updateStore(req.params.index, req.body).then(() => {
-    res.redirect('stores/editStore')   
+    res.redirect('stores/updateStore')   
     });
 
 })

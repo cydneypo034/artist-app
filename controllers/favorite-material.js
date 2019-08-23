@@ -17,7 +17,6 @@ materialRouter.get('/', function(req, res) {
 //ADD STORE
 //redirect added store id to allStores page once user clicks button
 
-
 materialRouter.get('/createMaterial', function(req, res){
     materialApi.addNewMaterial(req.body).then((_id) => {
     res.render('materials/createMaterial')
