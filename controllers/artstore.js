@@ -38,6 +38,8 @@ storeRouter.get('/:storeId', function(req, res){
     })
 })
 
+
+
 //EDIT STORE
 
 storeRouter.put('/:storeId', function(req,res){
