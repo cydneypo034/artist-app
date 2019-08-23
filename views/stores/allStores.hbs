@@ -11,17 +11,11 @@
 
 
 
-    <ul>
-        {{#each stores}} 
-
-        <li>
-            
-            <a href="/artstore/{{_id}}">{{name}}</a>
-        
-        </li>
-
-        {{/each}}
-
-    </ul>
-
+<ol class="createStore">
+    {{#each stores}}
+    <li>
+        {{this}}
+    </li>
+    {{/each}}
+</ol>
 

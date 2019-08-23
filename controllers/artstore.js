@@ -40,7 +40,6 @@ storeRouter.get('/:materialId', function(req, res){
     })
 })
 
-
 /*
 storeRouter.get('/:id', function(req, res){
     storeApi.getOneStore(req.params.id).then((storeId) => {

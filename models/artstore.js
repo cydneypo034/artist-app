@@ -26,8 +26,8 @@ function getAllStores() {
     return StoreCollection.find()
 }
 
-function getOneStore(storeId) {
-    return StoreCollection.findById(storeId)
+function getOneStore(storeOneId) {
+    return StoreCollection.findById(storeOneId)
 }
 
 function addNewStore(newStore) {
