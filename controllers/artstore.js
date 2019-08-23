@@ -32,6 +32,7 @@ storeRouter.get('/:materialId', function(req, res){
     })
 })
 
+
 storeRouter.get('/:storeId', function(req, res){
     storeApi.getOneStore(req.params.index).then((store) => {
         res.render('stores/oneStore')
@@ -39,7 +40,7 @@ storeRouter.get('/:storeId', function(req, res){
 })
 
 
-
+/*
 //EDIT STORE
 
 storeRouter.put('/:storeId', function(req,res){
@@ -58,7 +59,7 @@ storeRouter.delete('/artstore/:storeId', function(req, res) {
 
 
 
-
+*/
 
 
 
