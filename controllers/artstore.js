@@ -23,8 +23,10 @@ storeRouter.get('/createStore', function(req, res){
     res.render('stores/createStore')
     })
 })
+
+//reroutes user back to landing page when they click add store
 storeRouter.post('/', (req, res) => {
-    res.render('/artstore')
+    res.render('storeforcreateform/allStores')
 })
 
 //ONE STORE HAS THE MATERIAL LISTED
@@ -34,13 +36,15 @@ storeRouter.get('/:materialId', function(req, res){
     })
 })
 
+
+/*
 storeRouter.get('/:id', function(req, res){
     storeApi.getOneStore(req.params.id).then((storeId) => {
         res.render('one store', {storeId})
     })
 })
 
-/*
+
 
 //EDIT STORE
 

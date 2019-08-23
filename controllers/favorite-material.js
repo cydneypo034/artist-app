@@ -14,15 +14,18 @@ materialRouter.get('/', function(req, res) {
         res.send('allMaterials');
     })
 })
+
+
+
 //ADD STORE
 //redirect added store id to allStores page once user clicks button
 
 materialRouter.get('/createMaterial', function(req, res){
-    materialApi.addNewMaterial(req.body).then((_id) => {
+    materialApi.addNewMaterial(req.body).then((id) => {
     res.render('materials/oneMaterial')
     })
 })
-
+/*
 
 
 //ONE STORE
@@ -50,7 +53,7 @@ materialRouter.delete('/favorite-material/:materialId', function(req, res) {
 })
 
 
-
+*/
 
 
 
