@@ -11,7 +11,7 @@ const storeRouter = express.Router()
 //ALL STORES
 storeRouter.get('/', function(req, res) {
     storeApi.getAllStores().then((stores) => {
-        res.render('./storeforcreateform/allStores', {stores});
+        res.render('./stores/allStores', {stores});
     })
 })
 
