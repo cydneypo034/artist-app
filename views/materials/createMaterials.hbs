@@ -1,21 +1,22 @@
+<h1>The Traveling Artist</h1>
+
+<p>Enter your favorite material to use in your creations.</p>
+
 <form method="POST" action="/materials"/>
-    <label for="name">Name</label>
-    <input type="text" name="name"/>
+    <label for="type">Type</label>
+    <input type="text" name="type"/>
 
-    <label for="address">Address</label>
-    <input type="text" name="address"/>
+    <label for="quantity">Quantity</label>
+    <input type="number" name="quantity"/>
 
-    <label for="yearsOpen">Years Open</label>
-    <input type="text" name="yearsOpen"/>
+    <label for="brandName">Brand Name</label>
+    <input type="text" name="brandName"/>
 
-    <label for="website">Website</label>
-    <input type="text" name="website"/>
+    <label for="cost">Cost</label>
+    <input type="number" name="cost"/>
 
-    <label for="manager">Managers</label>
-    <input type="text" name="managers"/>
-
-    <label for="availableClasses">Available Classes</label>
-    <input type="checkbox" name="availableClasses"/>
+    <label for="soldYearAround">Sold Year Around</label>
+    <input type="checkbox" name="soldYearAround"/>
 
     <input type="submit" value="Add New Material"/>
 </form>

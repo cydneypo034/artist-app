@@ -6,22 +6,14 @@
 const express = require('express')
 const storeApi = require('../models/artstore.js')
 const storeRouter = express.Router()
-const materialRouter = express.Router()
 
 
 //ALL STORES
 storeRouter.get('/', function(req, res) {
     storeApi.getAllStores().then((stores) => {
-        res.render('allStores');
+        res.render('storeforcreateform/allStores');
     })
 })
-
-materialRouter.get('/allMaterials', function(req, res) {
-    materialApi.getAllMaterials().then((materials) => {
-        res.render('allMaterials');
-    })
-})
-
 
 //ADD STORE
 //redirect added store id to allStores page once user clicks button
@@ -33,13 +25,12 @@ storeRouter.get('/createStore', function(req, res){
 })
 
 
-//ONE STORE
+//ONE STORE HAS THE MATERIAL LISTED
 storeRouter.get('/:storeId', function(req, res){
     storeApi.getOneStore(req.params.index).then((store) => {
-        res.render('oneStore')
+        res.render('materials/createMaterials')
     })
 })
-
 
 //EDIT STORE
 
@@ -64,6 +55,5 @@ storeRouter.delete('/artstore/:storeId', function(req, res) {
 
 
 module.exports = {
-    storeRouter,
-    materialRouter
+    storeRouter
 }
