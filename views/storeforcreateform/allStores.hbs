@@ -5,16 +5,23 @@
 
 <a href="/artstore/createStore">New Store</a>
 
+<br>
+
 <a href="/artstore/allMaterials">Add Your Material!</a>
 
 
 
-{{#each allStores}}
-
-<div>
     <ul>
-        <a href="/artstore/{{_id}}"></a>
-    </ul>
-</div>
+        {{#each stores}} 
 
-{{/each}}
+        <li>
+            
+            <a href="/artstore/{{_id}}">{{name}}</a>
+        
+        </li>
+
+        {{/each}}
+
+    </ul>
+
+

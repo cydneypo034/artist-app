@@ -11,7 +11,7 @@ const storeRouter = express.Router()
 //ALL STORES
 storeRouter.get('/', function(req, res) {
     storeApi.getAllStores().then((stores) => {
-        res.render('storeforcreateform/allStores');
+        res.render('./storeforcreateform/allStores', {stores});
     })
 })
 
@@ -26,7 +26,11 @@ storeRouter.get('/createStore', function(req, res){
 
 //reroutes user back to landing page when they click add store
 storeRouter.post('/', (req, res) => {
-    res.render('storeforcreateform/allStores')
+    storeApi.addNewStore(req.body).then((newStore) => {
+        console.log(newStore)
+        res.redirect('/artstore')
+    })
+    //res.render('storeforcreateform/allStores')
 })
 
 //ONE STORE HAS THE MATERIAL LISTED

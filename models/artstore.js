@@ -31,7 +31,7 @@ function getOneStore(storeId) {
 }
 
 function addNewStore(newStore) {
-    return StoreCollection.create( [newStore] );
+    return StoreCollection.create(newStore);
 }
 
 function updateStore(storeUpdateId) {
