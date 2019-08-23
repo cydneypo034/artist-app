@@ -1,15 +1,14 @@
 <h2>Store {{store._id}}</h2>
 
-{{#each allStores}}
 <div>
-   <div>Name: <a href="/stores/{{@index}}"></a>{{name}}</div>
+   <div>Name: {{name}}</div>
     <div>Address: {{address}}</div>
     <div>YearOpen: {{yearOpen}}</div>
     <div>Website: {{website}}</div>
     <div>Manager: {{manager}}</div>
     <div>Available Classes: {{availableClasses}}</div>
 </div>
-{{/each}}
+
 
 <form method="POST" action="/stores/{{store._id}}_?method=DELETE">
     <input type="submit" value="Delete Store"/>

@@ -1,15 +1,15 @@
 <h2>Material {{material._id}}</h2>
 
-{{#each allMaterials}}
+
 <div>
-   <div>Name: <a href="/materials/{{@index}}"></a>{{name}}</div>
+   <div>Name: {{name}}</div>
     <div>Address: {{address}}</div>
     <div>YearOpen: {{yearOpen}}</div>
     <div>Website: {{website}}</div>
     <div>Manager: {{manager}}</div>
     <div>Available Classes: {{availableClasses}}</div>
 </div>
-{{/each}}
+
 
 <form method="POST" action="/materials/{{material._id}}_?method=DELETE">
     <input type="submit" value="Delete Material"/>

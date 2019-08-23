@@ -23,7 +23,9 @@ storeRouter.get('/createStore', function(req, res){
     res.render('stores/createStore')
     })
 })
-
+storeRouter.post('/', (req, res) => {
+    res.render('/artstore')
+})
 
 //ONE STORE HAS THE MATERIAL LISTED
 storeRouter.get('/:materialId', function(req, res){
