@@ -19,19 +19,22 @@ storeRouter.get('/', function(req, res) {
 //redirect added store id to allStores page once user clicks button
 
 storeRouter.get('/createStore', function(req, res){
-    storeApi.addNewStore(req.body).then((_id) => {
+    storeApi.addNewStore(req.body).then(() => {
     res.render('stores/createStore')
     })
 })
 
 //reroutes user back to landing page when they click add store
-storeRouter.post('/', (req, res) => {
+storeRouter.post('/addstore', (req, res) => {
+    console.log('/addstore - POST - req.body', req.body)
     storeApi.addNewStore(req.body).then((newStore) => {
         console.log(newStore)
         res.redirect('/artstore')
     })
     //res.render('storeforcreateform/allStores')
 })
+
+
 
 //ONE STORE HAS THE MATERIAL LISTED
 storeRouter.get('/:materialId', function(req, res){
@@ -40,14 +43,14 @@ storeRouter.get('/:materialId', function(req, res){
     })
 })
 
-/*
-storeRouter.get('/:id', function(req, res){
-    storeApi.getOneStore(req.params.id).then((storeId) => {
-        res.render('one store', {storeId})
+
+storeRouter.get('/:index', function(req, res){
+    storeApi.getOneStore(req.params.index).then((storeId) => {
+        res.render('stores/oneStore', {storeId})
     })
 })
 
-
+/*
 
 //EDIT STORE
 
