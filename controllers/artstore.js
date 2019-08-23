@@ -50,7 +50,7 @@ storeRouter.get('/:index', function(req, res){
     })
 })
 
-/*
+
 
 //EDIT STORE
 
@@ -67,12 +67,6 @@ storeRouter.delete('/artstore/:storeId', function(req, res) {
     res.redirect('/stores');
     })
 })
-
-
-
-*/
-
-
 
 module.exports = {
     storeRouter
