@@ -16,9 +16,6 @@ storeRouter.get('/', function(req, res) {
     })
 })
 
-//ONE STORE HAS THE MATERIAL LISTED
-
-
 //ADD STORE
 //redirect added store id to allStores page once user clicks button
 
@@ -39,9 +36,28 @@ storeRouter.post('/addstore', (req, res) => {
 })
 
 
+//ONE STORE HAS THE MATERIAL LISTED
 storeRouter.get('/:storeId', function(req, res){
     storeApi.getOneStore(req.params.index).then((store) => {
         res.render('stores/oneStore', {store})
+    })
+})
+
+//EDIT STORE
+
+//storeRouter.get('/:storeId', function(req, res){
+  //  res.render('stores/oneStore', {store})
+//})
+storeRouter.get('/:storeId/edit', function(req, res) {
+    storeApi.getOneStore(req.params.index).then((storeedit) => {
+    res.render('/stores/editStore', {storeedit})
+    })
+})
+
+storeRouter.put('/:storeId', (req,res) => {
+    console.log('/updatestore - POST - req.params.index + req.body')
+    storeApi.updateStore(req.params.index, req.body).then(() => {
+    res.redirect('/artstore');
     })
 })
 
@@ -52,20 +68,6 @@ storeRouter.delete('/:storeId', (req, res) => {
     res.redirect('/artstore');
     })
 })
-//EDIT STORE
-
-//storeRouter.get('/:storeId', function(req, res){
-  //  res.render('stores/oneStore', {store})
-//})
-
-storeRouter.put('/stores/editStore', function(req,res){
-    storeApi.editStore(req.params.index, req.body).then(() => {
-    res.redirect('stores/editStore')   
-    });
-
-})
-
-
 
 
 module.exports = {

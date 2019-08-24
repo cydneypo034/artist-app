@@ -37,8 +37,8 @@ function addNewStore(newStore) {
     return StoreCollection.create(newStore);
 }
 
-function editStore(storeUpdateId) {
-    return StoreCollection.findByIdAndUpdate(storeUpdateId)
+function updateStore() {
+    return StoreCollection.updateOne({_id: id})
 }
 
 
@@ -46,8 +46,8 @@ module.exports = {
     addNewStore,
     createStore,
     deleteStore,
-    editStore,
     getOneStore,
-    getAllStores,
+    getAllStores,    
+    updateStore,
 }
 

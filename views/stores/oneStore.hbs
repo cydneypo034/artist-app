@@ -1,15 +1,15 @@
 
-<h2>{{store}}</h2>
+<h2>Store {{store.name}}</h2>
 
-<ul>
-   <li>Name: </li>
-    <li>Address: </li>
-    <li>Years Open: </li>
-    <li>Website: </li>
-    <li>Managers: </li>
-    <li>Available Classes: </li>
-</ul>
+<p>Name: {{store.name}}</p>
+<p>Address: {{store.address}}</p>
+<p>Years Open: {{store.yearsOpen}}</p>
+<p>Website: {{store.website}}</p>
+<p>Manager: {{store.manager}}</p>
+<p>Available Classes: {{store.availableClasses}}</p>
 
 <form method="POST" action="/artstore/{{store}}/?_method=DELETE">
     <input type="submit" value="Delete Store"/>
 </form>
+
+<a href="/artstore">Go Home!</a>
