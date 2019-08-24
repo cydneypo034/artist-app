@@ -30,10 +30,6 @@ function getOneStore(storeOneId) {
     return StoreCollection.findOne(storeOneId)
 }
 
-function getWholeStore(storeWholeId) {
-    return StoreCollection.findById(storeWholeId)
-}
-
 function addNewStore(newStore) {
     return StoreCollection.create(newStore);
 }
@@ -43,7 +39,7 @@ function editStore(storeUpdateId) {
 }
 
 function deleteStore(storeId) {
-    return StoreCollection.findByIdAndDelete({_id: storeId})
+    return StoreCollection.findByIdAndDelete(storeId)
 }
 
 module.exports = {
@@ -53,6 +49,5 @@ module.exports = {
     editStore,
     getAllStores,
     getOneStore,
-    getWholeStore,
 }
 
