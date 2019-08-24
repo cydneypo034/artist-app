@@ -44,6 +44,14 @@ storeRouter.get('/:storeId', function(req, res){
         res.render('stores/oneStore', {store})
     })
 })
+
+//DELETE STORE
+storeRouter.delete('/:storeId', (req, res) => {
+    console.log('/deletestore - POST - req.param.index')
+    storeApi.deleteStore(req.params.index).then(() => {
+    res.redirect('./stores/allStores');
+    })
+})
 //EDIT STORE
 
 //storeRouter.get('/:storeId', function(req, res){
@@ -57,12 +65,7 @@ storeRouter.put('/stores/editStore', function(req,res){
 
 })
 
-//DELETE STORE
-storeRouter.delete('/:storeId', function(req, res) {
-    storeApi.deleteStore(req.params.index).then(() => {
-    res.redirect('./stores/allStores');
-    })
-})
+
 
 
 module.exports = {

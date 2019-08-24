@@ -38,7 +38,7 @@ function editStore(storeUpdateId) {
 }
 
 function deleteStore(storeId) {
-    return StoreCollection.findByIdAndDelete(storeId)
+    return StoreCollection.deleteOne(storeId)
 }
 
 module.exports = {
