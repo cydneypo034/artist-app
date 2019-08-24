@@ -5,15 +5,12 @@
 
 <a href="/artstore/createStore">Add New Store</a>
 
-<br>
-
-<a href="/artstore/createMaterials">Add Your Material!</a>
 
 
-<ol class="oneStore">
+<ol>
     {{#each stores}}
     <li>
-       <a href="/views/stores/editStore.hbs">{{this}}</a>
+       <a href="./artstore/editStore">{{this}}</a>
     </li>
     {{/each}}
 </ol>

@@ -16,7 +16,6 @@ materialRouter.get('/', function(req, res) {
 })
 
 
-
 //ADD STORE
 //redirect added store id to allStores page once user clicks button
 
