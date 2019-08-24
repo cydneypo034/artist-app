@@ -15,6 +15,12 @@ storeRouter.get('/', function(req, res) {
     })
 })
 
+storeRouter.get('/artstore/:index', function(req, res){
+    storeApi.getOneStore(req.params.index).then((onestore) => {
+        res.render('./stores/oneStore', {onestore})
+    })
+})
+
 //ADD STORE
 //redirect added store id to allStores page once user clicks button
 
@@ -35,22 +41,16 @@ storeRouter.post('/addstore', (req, res) => {
 })
 
 
-
+/*
 //ONE STORE HAS THE MATERIAL LISTED
 storeRouter.get('/:materialId', function(req, res){
-    storeApi.getOneStore(req.params.index).then((store) => {
+    storeApi.getOneMaterial(req.params.index).then((store) => {
         res.render('materials/createMaterials')
     })
 })
 
 
-storeRouter.get('/:index', function(req, res){
-    storeApi.getOneStore(req.params.index).then((storeId) => {
-        res.render('artstore/oneStore', {storeId})
-    })
-})
-
-
+/*
 
 //EDIT STORE
 
@@ -62,11 +62,13 @@ storeRouter.put('/:storeId', function(req,res){
 })
 
 //DELETE STORE
-storeRouter.delete('/', function(req, res) {
+storeRouter.delete('/:index', function(req, res) {
     storeApi.deleteStore(req.params.index).then(() => {
-    res.redirect('artstore/oneStore');
+    res.redirect('/stores/oneStore');
     })
 })
+
+*/
 
 module.exports = {
     storeRouter

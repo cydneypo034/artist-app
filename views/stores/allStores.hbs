@@ -3,7 +3,7 @@
 <p>Welcome to The Traveling Artist! Our mission is to help get more exposure to local art stores within the state of Georgia. Click on the "Add New Store" button to enter an art store in your city. </p>
 
 
-<a href="/artstore/createStore">New Store</a>
+<a href="/artstore/createStore">Add New Store</a>
 
 <br>
 
@@ -11,10 +11,10 @@
 
 
 
-<ol class="createStore">
+<ol class="oneStore">
     {{#each stores}}
     <li>
-       <a href="/views/stores/oneStore.hbs">{{this}}</a>
+       <a href="stores/oneStore">{{this}}</a>
     </li>
     {{/each}}
 </ol>

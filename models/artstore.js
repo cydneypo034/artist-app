@@ -30,24 +30,29 @@ function getOneStore(storeOneId) {
     return StoreCollection.findOne(storeOneId)
 }
 
+function getOneMaterial(materialOneId) {
+    return StoreCollection.findOne(materialOneId)
+}
+
 function addNewStore(newStore) {
     return StoreCollection.create(newStore);
 }
 
-function updateStore(storeUpdateId) {
-    return StoreCollection.updateOne(storeUpdateId)
+function editStore(storeUpdateId) {
+    return StoreCollection.findByIdAndUpdate(storeUpdateId)
 }
 
 function deleteStore(storeId) {
-    return StoreCollection.deleteOne({_id: storeId})
+    return StoreCollection.findByIdAndDelete({_id: storeId})
 }
 
 module.exports = {
     addNewStore,
     createStore,
     deleteStore,
+    editStore,
     getAllStores,
     getOneStore,
-    updateStore,
+    getOneMaterial,
 }
 
