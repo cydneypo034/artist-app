@@ -18,11 +18,15 @@ function createStore() {
         yearsOpen: 0,
         website: " ",
         manager: " ",
-        availableClasses: " "
+        availableClasses: " ",
     })
 }
 function getAllStores() {
     return StoreCollection.find()
+}
+
+function deleteStore(noStores) {
+    return StoreCollection.deleteOne(noStores)
 }
 
 function getOneStore(storeOneId) {
@@ -37,9 +41,6 @@ function editStore(storeUpdateId) {
     return StoreCollection.findByIdAndUpdate(storeUpdateId)
 }
 
-function deleteStore(storeId) {
-    return StoreCollection.deleteOne(storeId)
-}
 
 module.exports = {
     addNewStore,

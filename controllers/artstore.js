@@ -49,7 +49,7 @@ storeRouter.get('/:storeId', function(req, res){
 storeRouter.delete('/:storeId', (req, res) => {
     console.log('/deletestore - POST - req.param.index')
     storeApi.deleteStore(req.params.index).then(() => {
-    res.redirect('./stores/allStores');
+    res.redirect('/artstore');
     })
 })
 //EDIT STORE

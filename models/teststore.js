@@ -1,5 +1,8 @@
 const storeApi = require('./artstore.js')
 
+storeApi.deleteAllStores().then((allStoresInDB) => {
+    console.log(allStoresInDB)
+})
 
 storeApi.addNewStore().then((newStore) => {
     console.log(newStore)
