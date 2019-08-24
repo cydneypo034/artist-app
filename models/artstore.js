@@ -1,6 +1,6 @@
 const mongoose = require('./connection.js')
 
-const StoreSchema = mongoose.Schema({
+var StoreSchema = new mongoose.Schema({
     name: String,
     address: String,
     yearsOpen: Number,
@@ -30,8 +30,8 @@ function getOneStore(storeOneId) {
     return StoreCollection.findOne(storeOneId)
 }
 
-function getOneMaterial(materialOneId) {
-    return StoreCollection.findOne(materialOneId)
+function getWholeStore(storeWholeId) {
+    return StoreCollection.findById(storeWholeId)
 }
 
 function addNewStore(newStore) {
@@ -53,6 +53,6 @@ module.exports = {
     editStore,
     getAllStores,
     getOneStore,
-    getOneMaterial,
+    getWholeStore,
 }
 

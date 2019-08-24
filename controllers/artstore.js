@@ -9,17 +9,13 @@ const storeRouter = express.Router()
 
 
 //ALL STORES
+
 storeRouter.get('/', function(req, res) {
     storeApi.getAllStores().then((stores) => {
         res.render('./stores/allStores', {stores});
     })
 })
 
-storeRouter.get('/artstore/:index', function(req, res){
-    storeApi.getOneStore(req.params.index).then((onestore) => {
-        res.render('./stores/oneStore', {onestore})
-    })
-})
 
 //ADD STORE
 //redirect added store id to allStores page once user clicks button
@@ -41,14 +37,20 @@ storeRouter.post('/addstore', (req, res) => {
 })
 
 
-/*
+
 //ONE STORE HAS THE MATERIAL LISTED
 storeRouter.get('/:materialId', function(req, res){
-    storeApi.getOneMaterial(req.params.index).then((store) => {
+    storeApi.getOneStore(req.params.index).then((store) => {
         res.render('materials/createMaterials')
     })
 })
-
+/*
+storeRouter.get('/:index', function(req, res){
+    storeApi.getWholeStore(req.params.index).then((onestore) => {
+        res.render('stores/wholeStore', { onestore })
+    })
+})
+*/
 
 /*
 
