@@ -17,11 +17,7 @@ storeRouter.get('/', function(req, res) {
 })
 
 //ONE STORE HAS THE MATERIAL LISTED
-storeRouter.get('/:storeId', function(req, res){
-    storeApi.getOneStore(req.params.index).then((store) => {
-        res.render('stores/editStore', {store})
-    })
-})
+
 
 //ADD STORE
 //redirect added store id to allStores page once user clicks button
@@ -42,8 +38,19 @@ storeRouter.post('/addstore', (req, res) => {
     //res.render('storeforcreateform/allStores')
 })
 
+
+storeRouter.get('/:storeId', function(req, res){
+    storeApi.getOneStore(req.params.index).then((store) => {
+        res.render('stores/oneStore', {store})
+    })
+})
 //EDIT STORE
-storeRouter.put('/editStore', function(req,res){
+
+//storeRouter.get('/:storeId', function(req, res){
+  //  res.render('stores/oneStore', {store})
+//})
+
+storeRouter.put('/stores/editStore', function(req,res){
     storeApi.editStore(req.params.index, req.body).then(() => {
     res.redirect('stores/editStore')   
     });

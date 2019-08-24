@@ -1,9 +1,15 @@
 <h2>{{store}}</h2>
 
-<div>
-   <div>Description: {{store.description}}</div>
-    <div>Created At: {{store.createdAt}}</div>
-    <div>Status: {{store.status}}</div>
-    <div>Priority: {{store.priority}}</div>
-</div>
+<ul>
+   <li>Name: {{name.store}}</li>
+    <li>Address: </li>
+    <li>Years Open: </li>
+    <li>Website: </li>
+    <li>Managers: </li>
+    <li>Available Classes: </li>
+</ul>
 
+
+<form method="POST" action="/artstore/{{_id}}_?method=DELETE">
+    <input type="submit" value="Delete Store"/>
+</form>

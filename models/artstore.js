@@ -6,22 +6,21 @@ var StoreSchema = new mongoose.Schema({
     yearsOpen: Number,
     website: String,
     manager: String,
-    availableClasses: Boolean
+    availableClasses: String
 })
 
 const StoreCollection = mongoose.model('Store', StoreSchema)
 
 function createStore() {
     return StoreCollection.create({
-    name: "",
-    address: "",
-    yearsOpen: 0,
-    website: "",
-    manager: "",
-    availableClasses: true
+        name: " ",
+        address: " ",
+        yearsOpen: 0,
+        website: " ",
+        manager: " ",
+        availableClasses: " "
     })
 }
-
 function getAllStores() {
     return StoreCollection.find()
 }
@@ -47,7 +46,7 @@ module.exports = {
     createStore,
     deleteStore,
     editStore,
-    getAllStores,
     getOneStore,
+    getAllStores,
 }
 
