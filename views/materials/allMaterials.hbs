@@ -3,15 +3,14 @@
 <p>Welcome to The Traveling Artist! Our mission is to help get more exposure to local art stores within the state of Georgia. Click on the "Add New Store" button to enter an art store in your city. </p>
 
 
-<a href="/artstore/createStore">Add New Store</a>
-
-
 <a href="/materialstore/createMaterials">Add New Material</a>
 
 <ul>
-    {{#each stores}}
+    {{#each materials}}
     <li>
-       <a href="./artstore/oneStore">{{this}}</a> 
+        <a href="./materialstore/oneMaterial">{{this}}</a>
     </li>
     {{/each}}
 </ul>
+
+<a href="/artstore">Go Home!</a>

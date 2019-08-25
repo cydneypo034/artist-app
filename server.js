@@ -63,6 +63,7 @@ app.set('view engine', 'hbs')
  * the paths defined in the router.
  */
 app.use('/artstore', storeRouter)
+app.use('/materialstore', materialRouter)
 
 /* Step 5
  *

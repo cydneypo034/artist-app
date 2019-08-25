@@ -1,16 +1,11 @@
-<h2>Material {{material._id}}</h2>
+<h2>Material {{material.type}}</h2>
 
+<p>Type: {{material.type}}</p>
+<p>Quantity: {{material.quantity}}</p>
+<p>Brand Name: {{material.brandName}}</p>
+<p>Cost: {{material.cost}}</p>
+<p>Sold Year Round: {{material.soldYearRound}}</p>
 
-<div>
-   <div>Name: {{name}}</div>
-    <div>Address: {{address}}</div>
-    <div>YearOpen: {{yearOpen}}</div>
-    <div>Website: {{website}}</div>
-    <div>Manager: {{manager}}</div>
-    <div>Available Classes: {{availableClasses}}</div>
-</div>
-
-
-<form method="POST" action="/materials/{{material._id}}_?method=DELETE">
+<form method="POST" action="/materialstore/{{material}}_?method=DELETE">
     <input type="submit" value="Delete Material"/>
 </form>
