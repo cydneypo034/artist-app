@@ -7,7 +7,7 @@
     <input type="text" name="type"/>
 
     <label for="quantity">Quantity</label>
-    <input type="number" name="quantity"/>
+    <input type="text" name="quantity"/>
 
     <label for="brandName">Brand Name</label>
     <input type="text" name="brandName"/>
@@ -16,7 +16,7 @@
     <input type="number" name="cost"/>
 
     <label for="soldYearAround">Sold Year Around</label>
-    <input type="checkbox" name="soldYearAround"/>
+    <input type="checkbox" name="soldYearAround" value="true" {{#if material.soldYearRound}} checked {{/if}}/>
 
     <input type="submit" value="Add New Material"/>
 </form>

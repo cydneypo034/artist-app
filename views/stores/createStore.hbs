@@ -15,7 +15,7 @@
     <input type="text" name="managers"/>
 
     <label for="availableClasses">Available Classes</label>
-    <input type="text" name="availableClasses"/>
+    <input type="checkbox" name="availableClasses" value="true" {{#if store.availableClasses}} checked {{/if}}/>
 
     <input type="submit" value="Add New Store"/>
 </form>

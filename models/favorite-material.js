@@ -4,7 +4,7 @@ const materialsSchema = new mongoose.Schema({
     type: String,
     quantity: Number,
     brandName: String,
-    cost: Number,
+    cost: String,
     soldYearRound: Boolean
 })
 
@@ -16,7 +16,7 @@ function createMaterial() {
     type: "",
     quantity: 0,
     brandName: "",
-    cost: 0,
+    cost: "",
     soldYearRound: true
     })
 }
