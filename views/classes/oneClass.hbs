@@ -1,0 +1,16 @@
+<h2>Class: {{oneclass.name}}</h2>
+
+<p>Name: {{oneclass.name}}</p>
+<p>Address: {{oneclass.address}}</p>
+<p>Minutes Duration: {{oneclass.minutesDuration}}</p>
+<p>Website: {{oneclass.website}}</p>
+<p>Teacher: {{oneclass.teacher}}</p>
+<p>Taught Seasonal: {{oneclass.taughtSeasonal}}</p>
+
+<form method="POST" action="/classstore/{{oneclass}}/?_method=DELETE">
+    <input type="submit" value="Delete Class"/>
+</form>
+
+<a href="/artstore">View All Stores</a>
+
+<a href="/classstore">View All Classes</a>

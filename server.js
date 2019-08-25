@@ -19,6 +19,7 @@ const methodOverride = require('method-override')
  */
 const { storeRouter } = require('./controllers/artstore.js')
 const { materialRouter } = require('./controllers/favorite-material.js')
+const { classRouter } = require('./controllers/classestaught.js')
 
 
 /* Step 3
@@ -64,6 +65,7 @@ app.set('view engine', 'hbs')
  */
 app.use('/artstore', storeRouter)
 app.use('/materialstore', materialRouter)
+app.use('/classstore', classRouter)
 
 /* Step 5
  *

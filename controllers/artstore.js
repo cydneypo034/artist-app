@@ -55,7 +55,7 @@ storeRouter.get('/:storeId/edit', function(req, res) {
 })
 
 storeRouter.put('/:storeId', (req,res) => {
-    console.log('/updatestore - POST - req.params.index + req.body')
+    console.log('/editstore - POST - req.param.index')
     storeApi.updateStore(req.params.index, req.body).then(() => {
     res.redirect('/artstore');
     })

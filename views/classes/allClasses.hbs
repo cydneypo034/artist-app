@@ -1,0 +1,16 @@
+<h1>The Traveling Artist</h1>
+
+<p>This is the class page! Enter a class or two... or ten that your art store teaches.</p>
+
+
+<a href="/artstore">View All Stores</a>
+
+<a href="/classstore/createClass">Add New Class</a>
+
+<ul>
+    {{#each classes}}
+    <li>
+       <a href="./classstore/oneClass">{{this}}</a> 
+    </li>
+    {{/each}}
+</ul>

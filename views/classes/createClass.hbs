@@ -1,0 +1,23 @@
+<form method="POST" action="/classstore/addclass">
+    <label for="name">Name</label>
+    <input type="text" name="name"/>
+
+    <label for="address">Address</label>
+    <input type="text" name="address"/>
+
+    <label for="minutesDuration">Minutes Duration</label>
+    <input type="text" name="minutesDuration"/>
+
+    <label for="website">Website</label>
+    <input type="text" name="website"/>
+
+    <label for="teacher">Teacher</label>
+    <input type="text" name="teacher"/>
+
+    <label for="taughtSeasonal">Taught Seasonal</label>
+    <input type="checkbox" name="taughtSeasonal" value="true" {{#if class.taughtSeasonal}} checked {{/if}}/>
+
+    <input type="submit" value="Add New Class"/>
+</form>
+
+<a href="/classstore">View Class List</a>
