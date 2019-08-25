@@ -25,10 +25,6 @@ function getAllMaterials() {
     return MaterialsCollection.find()
 }
 
-function deleteAllMaterials(thingId){
-    return MaterialsCollection.deleteMany(thingId)
-}
-
 function getOneMaterial(oneMaterialId) {
     return MaterialsCollection.findOne(oneMaterialId)
 }
@@ -37,13 +33,14 @@ function addNewMaterial(newMaterial) {
     return MaterialsCollection.create(newMaterial)
 }
 
+function deleteMaterial(killMaterialId) {
+    return MaterialsCollection.deleteOne(killMaterialId)
+}
+
 function updateMaterial(materialUpdateId) {
     return MaterialsCollection.updateOne(materialUpdateId)
 }
 
-function deleteMaterial(killMaterialId) {
-    return MaterialsCollection.deleteOne(killMaterialId)
-}
 
 module.exports = {
     addNewMaterial,
@@ -52,5 +49,4 @@ module.exports = {
     getAllMaterials,
     getOneMaterial,
     updateMaterial,
-    deleteAllMaterials,
 }
