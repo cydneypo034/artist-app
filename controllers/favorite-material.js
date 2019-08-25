@@ -63,11 +63,6 @@ materialRouter.delete('/:materialId', (req, res) => {
     })
 })
 
-
-
-
-
-
 module.exports = {
     materialRouter
 }

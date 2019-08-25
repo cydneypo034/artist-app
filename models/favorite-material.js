@@ -41,8 +41,8 @@ function updateMaterial(materialUpdateId) {
     return MaterialsCollection.updateOne(materialUpdateId)
 }
 
-function deleteMaterial(materialId) {
-    return MaterialsCollection.deleteOne(materialId)
+function deleteMaterial(killMaterialId) {
+    return MaterialsCollection.deleteOne(killMaterialId)
 }
 
 module.exports = {
