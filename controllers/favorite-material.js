@@ -46,21 +46,28 @@ materialRouter.get('/:materialId', function(req, res){
         res.render('materials/oneMaterial', {material} )
     })
 })
-/*
-//EDIT STORE
-materialRouter.put('/:materialId', function(req,res){
-    materialApi.updateMaterial(req.params.index, req.body).then(() => {
-    res.redirect('materials/editMaterial')   
-    });
 
-})
-*/
 //DELETE STORE
 materialRouter.delete('/:materialId', (req, res) => {
     console.log('/deletematerial - POST - req.param.index')
     materialApi.deleteMaterial(req.params.index).then(() => {
     res.redirect('/materialstore');
     })
+})
+
+
+//EDIT STORE
+materialRouter.get('/:materialId/edit', (req, res) => {
+    materialApi.getOneMaterial(req.params.index).then((materialE) => {
+        res.send('materials/editMaterial', {materialE} )
+    })
+})
+materialRouter.put('/:materialId', function(req,res){
+    console.log('/editmaterial - POST - req.param.index')
+    materialApi.updateMaterial(req.params.index, req.body).then((newEMaterial) => {
+    res.redirect('/materialstore')
+    });
+
 })
 
 module.exports = {
