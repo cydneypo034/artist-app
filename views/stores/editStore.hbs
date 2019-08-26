@@ -15,7 +15,7 @@
     <input type="text" name="managers" value="{{store.managers}}" id="managers"/>
 
     <label for="availableClasses">Available Classes</label>
-    <input type="text" name="availableClasses" value="{{#if store.availableClasses}} checked {{/if}}"/>
+    <input type="checkbox" name="availableClasses" value="{{store.availableClasses}}"/>
 
     <input type="submit" value="Save Store" />
 
