@@ -6,12 +6,12 @@
 <a href="/materialstore/createMaterials">Add New Material</a>
 
 
-<ul>
+<div>
     {{#each materials}}
-    <li>
-        <a href="./materialstore/oneMaterial">{{this}}</a>
-    </li>
+    <p>
+        <a href="./materialstore/oneMaterial">{{type}}</a>
+    </p>
     {{/each}}
-</ul>
+</div>
 
 <a href="/artstore">View All Stores</a>

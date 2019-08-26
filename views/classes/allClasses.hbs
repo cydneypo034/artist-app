@@ -7,10 +7,10 @@
 
 <a href="/classstore/createClass">Add New Class</a>
 
-<ul>
+<div>
     {{#each classes}}
-    <li>
-       <a href="./classstore/oneClass">{{this}}</a> 
-    </li>
+    <p>
+       <a href="./classstore/oneClass">{{nameOfClass}}</a> 
+    </p>
     {{/each}}
-</ul>
+</div>

@@ -8,7 +8,7 @@ const classApi = require('../models/classestaught.js')
 const classRouter = express.Router()
 
 
-//ALL Classes
+//ALL Classes HTTP
 
 classRouter.get('/', function(req, res) {
     classApi.getAllClasses().then((classes) => {
@@ -17,16 +17,16 @@ classRouter.get('/', function(req, res) {
 })
 
 
-//ADD CLASS
-//redirect added store id to allStores page once user clicks button
+//ADD CLASS HTTP
+//redirect added class id to allClasses page once user clicks button
 
 classRouter.get('/createClass', function(req, res){
-    classApi.addNewClass(req.body).then(() => {
+    //classApi.addNewClass(req.body).then(() => {
     res.render('classes/createClass')
-    })
+    //})
 })
 
-//reroutes user back to landing page when they click add store
+//reroutes user back to landing page when they click add class
 classRouter.post('/addclass', (req, res) => {
     console.log('/addclass - POST - req.body', req.body)
     classApi.addNewClass(req.body).then((newClass) => {
@@ -36,7 +36,7 @@ classRouter.post('/addclass', (req, res) => {
     //res.render('storeforcreateform/allStores')
 })
 
-//EDIT CLASS
+//EDIT CLASS HTTP
 
 classRouter.get('/:classId/edit', function(req, res) {
     classApi.getOneClass(req.params.index).then((classedit) => {
@@ -44,13 +44,14 @@ classRouter.get('/:classId/edit', function(req, res) {
     })
 })
 
-//ONE CLASS HAS THE MATERIAL LISTED
+//ONE CLASS HTTP
 classRouter.get('/:classId', function(req, res){
     classApi.getOneClass(req.params.index).then((oneclass) => {
         res.render('classes/oneClass', {oneclass})
     })
 })
 
+//UPDATE CLASS HTTP
 classRouter.put('/:classId', (req,res) => {
     console.log('/classstore - POST - req.param.index')
     classApi.updateClass(req.params.index, req.body).then(() => {

@@ -8,10 +8,10 @@
 
 <a href="/materialstore/createMaterials">Add New Material</a>
 
-<ul>
+<div>
     {{#each stores}}
-    <li>
-       <a href="./artstore/oneStore">{{this}}</a><a href="./classstore/createClass">Add Class to this Store.</a>
-    </li>
+    <p>
+       <a href="./artstore/oneStore">{{name}}</a><br><a href="./classstore/createClass">Add Class for this Store.</a>
+    </p>
     {{/each}}
-</ul>
+</div>
