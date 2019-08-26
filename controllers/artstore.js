@@ -35,7 +35,15 @@ storeRouter.post('/addstore', (req, res) => {
     //res.render('storeforcreateform/allStores')
 })
 
-
+//EDIT STORE --- need to do this part here!!!
+//storeRouter.get('/:storeId', function(req, res){
+  //  res.render('stores/oneStore', {store})
+//})
+storeRouter.get('/:storeId/edit', function(req, res) {
+    storeApi.getOneStore(req.params.index).then((storeEId) => {
+    res.render('stores/editStore', {storeEId})
+    })
+})
 //ONE STORE HAS THE MATERIAL LISTED
 storeRouter.get('/:storeId', function(req, res){
     storeApi.getOneStore(req.params.index).then((store) => {
@@ -43,20 +51,9 @@ storeRouter.get('/:storeId', function(req, res){
     })
 })
 
-//EDIT STORE
-
-//storeRouter.get('/:storeId', function(req, res){
-  //  res.render('stores/oneStore', {store})
-//})
-storeRouter.get('/:storeId/edit', function(req, res) {
-    storeApi.getOneStore(req.params.index).then((storeedit) => {
-    res.render('/stores/editStore', {storeedit})
-    })
-})
-
 storeRouter.put('/:storeId', (req,res) => {
     console.log('/editstore - POST - req.param.index')
-    storeApi.updateStore(req.params.index, req.body).then(() => {
+    storeApi.editStore(req.params.index, req.body).then((newAStore) => {
     res.redirect('/artstore');
     })
 })

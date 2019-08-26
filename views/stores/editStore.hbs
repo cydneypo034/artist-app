@@ -1,21 +1,21 @@
-<form method="POST" action="/artstore/{{store}}?_method=PUT">
+<form method="POST" action="/artstore/{{store._id}}/editstore/?_method=PUT">
     <label for="name">Name</label>
-    <input type="text" name="name" value="name" placeholder="{{store.name}}"/>
+    <input type="text" name="name" value="{{store.name}}" id="name"/>
 
     <label for="address">Address</label>
-    <input type="text" name="address" value="address" placeholder="{{store.address}}" />
+    <input type="text" name="address" value="{{store.address}}" id="address" />
 
     <label for="yearsOpen">Years Open</label>
-    <input type="text" name="yearsOpen" value="yearsOpen" placeholder="{{store.yearsOpen}}"/>
+    <input type="text" name="yearsOpen" value="{{store.yearsOpen}}" id="yearsOpen"/>
 
     <label for="website">Website</label>
-    <input type="text" name="website" value="website" placeholder="{{store.website}}"/>
+    <input type="text" name="website" value="{{store.website}}" id="website"/>
 
     <label for="manager">Managers</label>
-    <input type="text" name="managers" value="managers" placeholder="{{store.managers}}"/>
+    <input type="text" name="managers" value="{{store.managers}}" id="managers"/>
 
     <label for="availableClasses">Available Classes</label>
-    <input type="text" name="availableClasses" value="availableClasses" {{#if store.availableClasses}} checked {{/if}}/>
+    <input type="text" name="availableClasses" value="{{#if store.availableClasses}} checked {{/if}}"/>
 
     <input type="submit" value="Save Store" />
 
