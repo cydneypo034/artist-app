@@ -49,7 +49,7 @@ storeRouter.get('/:storeId/oneStore', function(req, res){
   //  res.render('stores/oneStore', {store})
 //})
 storeRouter.get('/:storeId/edit', function(req, res) {
-    storeApi.getOneStore(req.params.storeId).then((storeEId) => {
+    storeApi.getOneStore(req.params.index).then((storeEId) => {
     res.render('stores/editStore', {storeEId})
     })
 })
@@ -71,7 +71,7 @@ storeRouter.get('/:storeId', (req, res) => {
 //UPDATE STORE HTTP
 storeRouter.put('/:storeId', (req,res) => {
     console.log('/editstore - POST - req.param.index')
-    storeApi.editStore(req.params.storeId, req.body).then(() => {
+    storeApi.editStore(req.params.index, req.body).then(() => {
     res.redirect('/artstore');
     })
 })

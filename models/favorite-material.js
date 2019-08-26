@@ -38,7 +38,7 @@ function deleteMaterial(killMaterialId) {
 }
 
 function editMaterial(materialId, newEMaterial) {
-    return MaterialsCollection.findByIdAndUpdate(materialId, newEMaterial)
+    return MaterialsCollection.findOneAndUpdate(materialId, newEMaterial)
 }
 
 

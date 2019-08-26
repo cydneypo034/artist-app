@@ -34,8 +34,8 @@ function addNewClass(addClass) {
     return ClassesCollection.create(addClass)
 }
 
-function updateClass() {
-    return ClassesCollection.findByIdAndUpdate()
+function editClass(firstClassId, newClassId) {
+    return ClassesCollection.findOneAndUpdate(firstClassId, newClassId)
 }
 
 function deleteClass(noClass) {
@@ -46,7 +46,7 @@ module.exports = {
     addNewClass,
     createClass,
     deleteClass,
+    editClass,
     getAllClasses,
     getOneClass,
-    updateClass,
 }
