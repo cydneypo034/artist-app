@@ -15,3 +15,7 @@ materialApi.getAllMaterials().then((allMaterialsInDB) => {
 materialApi.createMaterial().then((newMaterialInDB) => {
     console.log(newMaterialInDB)
 })
+
+materialApi.editMaterial().then((materialId, newEMaterial) => {
+    console.log(materialId, newEMaterial)
+})

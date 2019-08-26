@@ -1,8 +1,8 @@
 const mongoose = require('./connection.js')
 
 const classesSchema = new mongoose.Schema({
-    name: String,
-    address: String,
+    nameOfClass: String,
+    nameOfStore: String,
     minutesDuration: String,
     website: String,
     teacher: String,
@@ -13,8 +13,8 @@ const ClassesCollection = mongoose.model('classes', classesSchema)
 
 function createClass() {
     return ClassesCollection.create({
-        name: " ",
-        address: " ",
+        nameOfClass: " ",
+        nameOfStore: " ",
         minutesDuration: " ",
         website: " ",
         teacher: " ",

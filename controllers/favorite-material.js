@@ -40,12 +40,6 @@ materialRouter.post('/addmaterial', (req, res) => {
     //})
 //})
 
-//ONE STORE
-materialRouter.get('/:materialId', function(req, res){
-    materialApi.getOneMaterial(req.params.index).then((material) => {
-        res.render('materials/oneMaterial', {material} )
-    })
-})
 
 //DELETE STORE
 materialRouter.delete('/:materialId', (req, res) => {
@@ -57,14 +51,22 @@ materialRouter.delete('/:materialId', (req, res) => {
 
 
 //EDIT STORE
-materialRouter.get('/:materialId/edit', (req, res) => {
+materialRouter.get('/:materialId/edit', function(req, res) {
     materialApi.getOneMaterial(req.params.index).then((materialE) => {
-        res.send('materials/editMaterial', {materialE} )
+        res.render('materials/editMaterial', {materialE} )
     })
 })
-materialRouter.put('/:materialId', function(req,res){
+
+//ONE STORE
+materialRouter.get('/:materialId', function(req, res){
+    materialApi.getOneMaterial(req.params.index).then((material) => {
+        res.render('materials/oneMaterial', {material} )
+    })
+})
+
+materialRouter.put('/:materialId', (req,res) => {
     console.log('/editmaterial - POST - req.param.index')
-    materialApi.updateMaterial(req.params.index, req.body).then((newEMaterial) => {
+    materialApi.editMaterial(req.params.index, req.body).then((newEMaterial) => {
     res.redirect('/materialstore')
     });
 
