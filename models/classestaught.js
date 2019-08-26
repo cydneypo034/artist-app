@@ -6,7 +6,6 @@ const classesSchema = new mongoose.Schema({
     minutesDuration: String,
     website: String,
     teacher: String,
-    taughtSeasonal: Boolean
 })
 
 const ClassesCollection = mongoose.model('classes', classesSchema)
@@ -18,7 +17,6 @@ function createClass() {
         minutesDuration: " ",
         website: " ",
         teacher: " ",
-        taughtSeasonal: true,
     })
 }
 

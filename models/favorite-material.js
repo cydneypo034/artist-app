@@ -5,7 +5,6 @@ const materialsSchema = new mongoose.Schema({
     quantity: Number,
     brandName: String,
     cost: String,
-    soldYearRound: Boolean
 })
 
 const MaterialsCollection = mongoose.model('materials', materialsSchema)
@@ -17,7 +16,6 @@ function createMaterial() {
     quantity: 0,
     brandName: "",
     cost: "",
-    soldYearRound: true
     })
 }
 

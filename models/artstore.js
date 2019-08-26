@@ -5,7 +5,6 @@ var StoreSchema = new mongoose.Schema({
     address: String,
     yearsOpen: Number,
     website: String,
-    manager: String,
     availableClasses: String,
 })
 
@@ -17,7 +16,6 @@ function createStore() {
         address: " ",
         yearsOpen: 0,
         website: " ",
-        manager: " ",
         availableClasses: " ",
     })
 }
