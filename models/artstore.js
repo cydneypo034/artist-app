@@ -30,11 +30,11 @@ function deleteStore(noStores) {
 }
 
 function getOneStore(storeOneId) {
-    return StoreCollection.findOne(storeOneId)
+    return StoreCollection.findById(storeOneId)
 }
 
 function addNewStore(newStore) {
-    return StoreCollection.insertMany(newStore);
+    return StoreCollection.create(newStore);
 }
 
 function editStore(storeId, newAStore) {
