@@ -37,8 +37,8 @@ function deleteMaterial(killMaterialId) {
     return MaterialsCollection.deleteOne(killMaterialId)
 }
 
-function updateMaterial(materialUpdateId) {
-    return MaterialsCollection.updateOne(materialUpdateId)
+function editMaterial(materialId, newEMaterial) {
+    return StoreCollection.findByIdAndUpdate(materialId, newEMaterial)
 }
 
 
@@ -46,7 +46,7 @@ module.exports = {
     addNewMaterial,
     createMaterial,
     deleteMaterial,
+    editMaterial,
     getAllMaterials,
     getOneMaterial,
-    updateMaterial,
 }
