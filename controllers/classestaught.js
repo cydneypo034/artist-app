@@ -40,7 +40,7 @@ classRouter.post('/addclass', (req, res) => {
 
 classRouter.get('/:classId/edit', function(req, res) {
     classApi.getOneClass(req.params.index).then((classedit) => {
-    res.render('/classes/editClass', {classedit})
+    res.render('classes/editClass', {classedit})
     })
 })
 
