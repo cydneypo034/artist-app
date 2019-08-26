@@ -36,32 +36,28 @@ classRouter.post('/addclass', (req, res) => {
     //res.render('storeforcreateform/allStores')
 })
 
+//EDIT CLASS
 
-//ONE STORE HAS THE MATERIAL LISTED
+classRouter.get('/:classId/edit', function(req, res) {
+    classApi.getOneClass(req.params.index).then((classedit) => {
+    res.render('/classes/editClass', {classedit})
+    })
+})
+
+//ONE CLASS HAS THE MATERIAL LISTED
 classRouter.get('/:classId', function(req, res){
     classApi.getOneClass(req.params.index).then((oneclass) => {
         res.render('classes/oneClass', {oneclass})
     })
 })
 
-//EDIT STORE
-/*
-//storeRouter.get('/:storeId', function(req, res){
-  //  res.render('stores/oneStore', {store})
-//})
-storeRouter.get('/:storeId/edit', function(req, res) {
-    storeApi.getOneStore(req.params.index).then((storeedit) => {
-    res.render('/stores/editStore', {storeedit})
+classRouter.put('/:classId', (req,res) => {
+    console.log('/classstore - POST - req.param.index')
+    classApi.updateClass(req.params.index, req.body).then(() => {
+    res.redirect('/classstore');
     })
 })
 
-storeRouter.put('/:storeId', (req,res) => {
-    console.log('/editstore - POST - req.param.index')
-    storeApi.updateStore(req.params.index, req.body).then(() => {
-    res.redirect('/artstore');
-    })
-})
-*/
 //DELETE STORE
 classRouter.delete('/:classId', (req, res) => {
     console.log('/deleteclass - POST - req.param.index')

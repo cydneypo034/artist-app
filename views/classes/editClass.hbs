@@ -1,18 +1,21 @@
-<form method="POST" action="/materialstore/{{material._id}}/editmaterial/?_method=PUT">
-    <label for="type">Type</label>
-    <input type="text" name="type" value="{{material.type}}" id="type" />
+<form method="POST" action="/classstore/{{class._id}}/editclass/?_method=PUT">
+    <label for="nameOfClass">Name of Class</label>
+    <input type="text" name="nameOfClass" value="{{oneclass.nameOfClass}}" id="nameOfClass" />
 
-    <label for="quantity">Quantity</label>
-    <input type="number" name="quantity" value="{{material.quantity}}" id="quantity"/>
+    <label for="nameOfStore">Name of Store</label>
+    <input type="number" name="nameOfStore" value="{{oneclass.nameOfStore}}" id="nameOfStore"/>
 
-    <label for="brandName">Brand Name</label>
-    <input type="text" name="brandName" value="{{material.brandName}}" id="brandName"/>
+    <label for="minutesDuration">Minutes Duration</label>
+    <input type="text" name="minutesDuration" value="{{oneclass.minutesDuration}}" id="minutesDuration"/>
 
-    <label for="cost">Cost</label>
-    <input type="number" name="cost" value="{{material.cost}}" id="cost"/>
+    <label for="website">Website</label>
+    <input type="text" name="website" value="{{oneclass.website}}" id="website"/>
 
-    <label for="soldYearRound">Sold Year Around</label>
-    <input type="checkbox" name="soldYearAround" value="{{material.soldYearRound}}"/>
+    <label for="teacher">Teacher</label>
+    <input type="text" name="teacher" value="{{oneclass.teacher}}" id="teacher"/>
+
+    <label for="taughtSeasonal">Taught Seasonal</label>
+    <input type="checkbox" name="taughtSeasonal" value="{{oneclass.taughtSeasonal}}"/>
 
     <input type="submit" value="Save Material" />
 
