@@ -67,7 +67,7 @@ materialRouter.get('/:materialId', function(req, res){
 //UPDATE MATERIALS
 materialRouter.put('/:materialId', (req,res) => {
     console.log('/editmaterial - POST - req.param.index')
-    materialApi.editMaterial(req.params.index, req.body).then((newEMaterial) => {
+    materialApi.editMaterial(req.params.index, req.body).then(() => {
     res.redirect('/materialstore')
     });
 
