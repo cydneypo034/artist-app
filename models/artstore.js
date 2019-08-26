@@ -6,7 +6,7 @@ var StoreSchema = new mongoose.Schema({
     yearsOpen: Number,
     website: String,
     manager: String,
-    availableClasses: Boolean
+    availableClasses: String,
 })
 
 const StoreCollection = mongoose.model('Store', StoreSchema)
@@ -18,7 +18,7 @@ function createStore() {
         yearsOpen: 0,
         website: " ",
         manager: " ",
-        availableClasses: true,
+        availableClasses: " ",
     })
 }
 function getAllStores() {
@@ -38,7 +38,7 @@ function addNewStore(newStore) {
 }
 
 function editStore(storeEditId, newAStore) {
-    return StoreCollection.findOneAndUpdate(storeEditId, newAStore)
+    return StoreCollection.findByIdAndUpdate(storeEditId, newAStore)
 }
 
 

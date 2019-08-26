@@ -49,11 +49,11 @@ storeRouter.get('/:storeId/oneStore', function(req, res){
   //  res.render('stores/oneStore', {store})
 //})
 storeRouter.get('/:storeId/edit', function(req, res) {
-    storeApi.getOneStore(req.params.index).then((storeEId) => {
+    storeApi.getOneStore(req.params.storeId).then((storeEId) => {
     res.render('stores/editStore', {storeEId})
+    console.log(storeEId)
     })
 })
-
 /*
 //ONE STORE HTTP
 storeRouter.get('/:storeId', function(req, res){
@@ -62,16 +62,15 @@ storeRouter.get('/:storeId', function(req, res){
     })
 })
 */
-
 storeRouter.get('/:storeId', (req, res) => {
     storeApi.getOneStore(req.params.storeId).then((store) => {
         res.render('./stores/oneStore', {store})
     })
 })
 //UPDATE STORE HTTP
-storeRouter.put('/:storeId', (req,res) => {
-    console.log('/editstore - POST - req.param.index')
-    storeApi.editStore(req.params.index, req.body).then(() => {
+storeRouter.put('/:storeId/editstore', (req,res) => {
+    console.log('/editstore - POST - req.param.storeId')
+    storeApi.editStore(req.params.storeId, req.body).then(() => {
     res.redirect('/artstore');
     })
 })

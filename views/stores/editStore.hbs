@@ -1,4 +1,4 @@
-<form method="POST" action="/artstore/{{store._id}}/editstore/?_method=PUT">
+<form method="POST" action="/artstore/{{storeEId._id}}/editstore/?_method=PUT">
     <label for="name">Name</label>
     <input type="text" name="name" value="{{store.name}}" />
 
@@ -15,7 +15,7 @@
     <input type="text" name="managers" value="{{store.managers}}" />
 
     <label for="availableClasses">Available Classes</label>
-    <input type="checkbox" name="availableClasses" value="{{store.availableClasses}}" />
+    <input type="text" name="availableClasses" value="{{store.availableClasses}}" />
 
     <input type="submit" value="Save Store" />
 
