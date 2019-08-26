@@ -39,8 +39,9 @@ classRouter.post('/addclass', (req, res) => {
 //EDIT CLASS HTTP
 
 classRouter.get('/:classId/edit', function(req, res) {
-    classApi.getOneClass(req.params.index).then((classedit) => {
-    res.render('classes/editClass', {classedit})
+    classApi.getOneClass(req.params.classId).then((classeditId) => {
+    res.render('classes/editClass', {classeditId})
+    console.log(classeditId)
     })
 })
 
@@ -52,17 +53,17 @@ classRouter.get('/:classId', function(req, res){
 })
 
 //UPDATE CLASS HTTP
-classRouter.put('/:classId', (req,res) => {
-    console.log('/classstore - POST - req.param.index')
-    classApi.editClass(req.params.index, req.body).then(() => {
+classRouter.put('/:classId/editclass', (req,res) => {
+    console.log('/classstore - POST - req.param.classId')
+    classApi.editClass(req.params.classId, req.body).then(() => {
     res.redirect('/classstore');
     })
 })
 
-//DELETE STORE
+//DELETE CLASS
 classRouter.delete('/:classId', (req, res) => {
-    console.log('/deleteclass - POST - req.param.index')
-    classApi.deleteClass(req.params.index).then(() => {
+    console.log('/deleteclass - POST - req.param.classId')
+    classApi.deleteClass(req.params.classId).then(() => {
     res.redirect('/classstore');
     })
 })

@@ -35,11 +35,11 @@ function addNewClass(addClass) {
 }
 
 function editClass(firstClassId, newClassId) {
-    return ClassesCollection.findOneAndUpdate(firstClassId, newClassId)
+    return ClassesCollection.findByIdAndUpdate(firstClassId, newClassId)
 }
 
 function deleteClass(noClass) {
-    return ClassesCollection.deleteOne(noClass)
+    return ClassesCollection.findByIdAndDelete(noClass)
 }
 
 module.exports = {

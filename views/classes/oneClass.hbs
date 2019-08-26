@@ -7,7 +7,7 @@
 <p>Teacher: {{oneclass.teacher}}</p>
 <p>Taught Seasonal: {{oneclass.taughtSeasonal}}</p>
 
-<form method="POST" action="/classstore/{{oneclass}}/?_method=DELETE">
+<form method="POST" action="/classstore/{{oneclass._id}}/?_method=DELETE">
     <input type="submit" value="Delete Class"/>
 </form>
 
