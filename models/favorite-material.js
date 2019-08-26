@@ -26,7 +26,7 @@ function getAllMaterials() {
 }
 
 function getOneMaterial(oneMaterialId) {
-    return MaterialsCollection.findOne(oneMaterialId)
+    return MaterialsCollection.findById(oneMaterialId)
 }
 
 function addNewMaterial(newMaterial) {

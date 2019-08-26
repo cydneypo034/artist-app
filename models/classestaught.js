@@ -27,7 +27,7 @@ function getAllClasses() {
 }
 
 function getOneClass(getClass) {
-    return ClassesCollection.findOne(getClass)
+    return ClassesCollection.findById(getClass)
 }
 
 function addNewClass(addClass) {

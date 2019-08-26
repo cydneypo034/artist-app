@@ -5,13 +5,14 @@
 
 <a href="/materialstore/createMaterials">Add New Material</a>
 
-
+{{#each materials}}
 <div>
-    {{#each materials}}
+
     <p>
-        <a href="./materialstore/oneMaterial">{{type}}</a>
+        <a href="./materialstore/{{_id}}">{{type}}</a>
     </p>
-    {{/each}}
+
 </div>
+{{/each}}
 
 <a href="/artstore">View All Stores</a>

@@ -46,8 +46,8 @@ classRouter.get('/:classId/edit', function(req, res) {
 
 //ONE CLASS HTTP
 classRouter.get('/:classId', function(req, res){
-    classApi.getOneClass(req.params.index).then((oneclass) => {
-        res.render('classes/oneClass', {oneclass})
+    classApi.getOneClass(req.params.classId).then((oneclass) => {
+        res.render('./classes/oneClass', {oneclass})
     })
 })
 

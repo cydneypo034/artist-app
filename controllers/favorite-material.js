@@ -59,8 +59,8 @@ materialRouter.get('/:materialId/edit', function(req, res) {
 
 //ONE MATERIALS
 materialRouter.get('/:materialId', function(req, res){
-    materialApi.getOneMaterial(req.params.index).then((material) => {
-        res.render('materials/oneMaterial', {material} )
+    materialApi.getOneMaterial(req.params.materialId).then((material) => {
+        res.render('./materials/oneMaterial', {material} )
     })
 })
 
