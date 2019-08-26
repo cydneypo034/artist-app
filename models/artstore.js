@@ -26,7 +26,7 @@ function getAllStores() {
 }
 
 function deleteStore(noStores) {
-    return StoreCollection.deleteOne(noStores)
+    return StoreCollection.findByIdAndDelete(noStores)
 }
 
 function getOneStore(storeOneId) {
