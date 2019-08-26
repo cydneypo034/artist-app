@@ -41,13 +41,6 @@ materialRouter.post('/addmaterial', (req, res) => {
 //})
 
 
-//DELETE MATERIALS
-materialRouter.delete('/:materialId', (req, res) => {
-    console.log('/deletematerial - POST - req.param.index')
-    materialApi.deleteMaterial(req.params.index).then(() => {
-    res.redirect('/materialstore');
-    })
-})
 
 
 //EDIT MATERIALS
@@ -72,6 +65,14 @@ materialRouter.put('/:materialId/editmaterial', (req,res) => {
     res.redirect('/materialstore')
     });
 
+})
+
+//DELETE MATERIALS
+materialRouter.delete('/:materialId', (req, res) => {
+    console.log('/deletematerial - POST - req.param.materialId')
+    materialApi.deleteMaterial(req.params.materialId).then(() => {
+    res.redirect('/materialstore');
+    })
 })
 
 module.exports = {

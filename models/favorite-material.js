@@ -34,7 +34,7 @@ function addNewMaterial(newMaterial) {
 }
 
 function deleteMaterial(killMaterialId) {
-    return MaterialsCollection.deleteOne(killMaterialId)
+    return MaterialsCollection.findByIdAndDelete(killMaterialId)
 }
 
 function editMaterial(materialId, newEMaterial) {

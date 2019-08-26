@@ -77,8 +77,8 @@ storeRouter.put('/:storeId/editstore', (req,res) => {
 
 //DELETE STORE HTTP
 storeRouter.delete('/:storeId', (req, res) => {
-    console.log('/deletestore - POST - req.param.index')
-    storeApi.deleteStore(req.params.index).then(() => {
+    console.log('/deletestore - POST - req.param.storeId')
+    storeApi.deleteStore(req.params.storeId).then(() => {
     res.redirect('/artstore');
     })
 })
