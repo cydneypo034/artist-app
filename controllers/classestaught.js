@@ -54,7 +54,7 @@ classRouter.get('/:classId', function(req, res){
 //UPDATE CLASS HTTP
 classRouter.put('/:classId', (req,res) => {
     console.log('/classstore - POST - req.param.index')
-    classApi.updateClass(req.params.index, req.body).then(() => {
+    classApi.editClass(req.params.index, req.body).then(() => {
     res.redirect('/classstore');
     })
 })
