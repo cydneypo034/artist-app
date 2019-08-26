@@ -38,7 +38,7 @@ function addNewStore(newStore) {
 }
 
 function updateStore() {
-    return StoreCollection.findOneAndUpdate({_id: id}, id)
+    return StoreCollection.updateOne()
 }
 
 
