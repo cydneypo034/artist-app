@@ -34,7 +34,7 @@ function getOneStore(storeOneId) {
 }
 
 function addNewStore(newStore) {
-    return StoreCollection.create(newStore);
+    return StoreCollection.insertMany(newStore);
 }
 
 function editStore(storeId, newAStore) {

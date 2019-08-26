@@ -1,4 +1,9 @@
+<div class="container">
+
 <h1>The Traveling Artist</h1>
+
+</div>
+
 
 <p>Welcome to The Traveling Artist! Our mission is to help get more exposure to local art stores within the state of Georgia. Click on the "Add New Store" button to enter an art store in your city. </p>
 
@@ -11,7 +16,10 @@
 <div>
     {{#each stores}}
     <p>
-       <a href="./artstore/oneStore">{{name}}</a><br><a href="./classstore/createClass">Add Class for this Store.</a>
+       <a href="/artstore/oneStore">{{name}}</a>
+       <br>
+       <a href="/classstore/createClass">Add Class for this Store.</a>
     </p>
     {{/each}}
 </div>
+

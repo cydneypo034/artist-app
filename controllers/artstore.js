@@ -11,7 +11,7 @@ const storeRouter = express.Router()
 //ALL STORES HTTP
 storeRouter.get('/', function(req, res) {
     storeApi.getAllStores().then((stores) => {
-        res.render('./stores/allStores', {stores});
+        res.render('stores/allStores', {stores});
     })
 })
 
@@ -28,10 +28,21 @@ storeRouter.post('/addstore', (req, res) => {
     console.log('/addstore - POST - req.body', req.body)
     storeApi.addNewStore(req.body).then((newStore) => {
         console.log(newStore)
-        res.redirect('/artstore')
+        res.redirect('/artstore/oneStore')
     })
     //res.render('storeforcreateform/allStores')
 })
+
+/*
+storeRouter.get('/:storeId/oneStore', function(req, res){
+    storeApi.getOneStore(req.params.storeId).then((store) => {
+        res.render('stores/oneStore', {store})
+    })
+})
+
+*/
+
+
 
 //EDIT STORE HTTP
 //storeRouter.get('/:storeId', function(req, res){
@@ -42,17 +53,25 @@ storeRouter.get('/:storeId/edit', function(req, res) {
     res.render('stores/editStore', {storeEId})
     })
 })
+
+/*
 //ONE STORE HTTP
 storeRouter.get('/:storeId', function(req, res){
     storeApi.getOneStore(req.params.index).then((store) => {
         res.render('stores/oneStore', {store})
     })
 })
+*/
 
+storeRouter.get('/:storeId', (req, res) => {
+    storeApi.getOneStore(req.params.index).then((store) => {
+        res.render('stores/oneStore', {store})
+    })
+})
 //UPDATE STORE HTTP
 storeRouter.put('/:storeId', (req,res) => {
     console.log('/editstore - POST - req.param.index')
-    storeApi.editStore(req.params.index, req.body).then((newAStore) => {
+    storeApi.editStore(req.params.index, req.body).then(() => {
     res.redirect('/artstore');
     })
 })
