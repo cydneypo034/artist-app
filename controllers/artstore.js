@@ -28,7 +28,7 @@ storeRouter.post('/addstore', (req, res) => {
     console.log('/addstore - POST - req.body', req.body)
     storeApi.addNewStore(req.body).then((newStore) => {
         console.log(newStore)
-        res.redirect('/artstore/oneStore')
+        res.redirect('/artstore')
     })
     //res.render('storeforcreateform/allStores')
 })
