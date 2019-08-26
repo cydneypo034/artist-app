@@ -1,21 +1,21 @@
 <form method="POST" action="/artstore/{{store._id}}/editstore/?_method=PUT">
     <label for="name">Name</label>
-    <input type="text" name="name" value={{store.name}} id="name" />
+    <input type="text" name="name" value="{{store.name}}" />
 
     <label for="address">Address</label>
-    <input type="text" name="address" value={{store.address}} id="address" />
+    <input type="text" name="address" value="{{store.address}}" />
 
     <label for="yearsOpen">Years Open</label>
-    <input type="number" name="yearsOpen" value={{store.yearsOpen}} id="yearsOpen"/>
+    <input type="number" name="yearsOpen" value="{{store.yearsOpen}}"/>
 
     <label for="website">Website</label>
-    <input type="text" name="website" value={{store.website}} id="website" />
+    <input type="text" name="website" value="{{store.website}}" />
 
     <label for="manager">Managers</label>
-    <input type="text" name="managers" value={{store.managers}} id="managers" />
+    <input type="text" name="managers" value="{{store.managers}}" />
 
     <label for="availableClasses">Available Classes</label>
-    <input type="checkbox" name="availableClasses" value={{store.availableClasses}}/>
+    <input type="checkbox" name="availableClasses" value="{{store.availableClasses}}" />
 
     <input type="submit" value="Save Store" />
 

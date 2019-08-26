@@ -37,8 +37,8 @@ function addNewStore(newStore) {
     return StoreCollection.create(newStore);
 }
 
-function editStore(storeId, newAStore) {
-    return StoreCollection.findByIdAndUpdate(storeId, newAStore)
+function editStore(storeEditId, newAStore) {
+    return StoreCollection.findByIdAndUpdate(storeEditId, newAStore)
 }
 
 
