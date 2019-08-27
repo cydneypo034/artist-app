@@ -1,20 +1,25 @@
 <form method="POST" action="/classstore/addclass">
+    <div class="form-group">
     <label for="nameOfClass">Name of Class</label>
-    <input type="text" name="nameOfClass"/>
-
+    <input type="text" name="nameOfClass" placeholder="Enter Name of Class"/>
+    </div>
+    <div class="form-group">
     <label for="nameOfStore">Name of Store</label>
-    <input type="text" name="nameOfStore"/>
-
+    <input type="text" name="nameOfStore" placeholder="Enter Name of Store"/>
+    </div>
+    <div class="form-group">
     <label for="minutesDuration">Minutes Duration</label>
-    <input type="text" name="minutesDuration"/>
-
+    <input type="text" name="minutesDuration" placeholder="Ex: 60 minutes"/>
+    </div>
+    <div class="form-group">
     <label for="website">Website</label>
-    <input type="text" name="website"/>
-
+    <input type="text" name="website" placeholder="Ex: www.storesite.com"/>
+    </div>
+    <div class="form-group">
     <label for="teacher">Teacher</label>
-    <input type="text" name="teacher"/>
-
-    <input type="submit" class= "btn btn-default" value="Add New Class"/>
+    <input type="text" name="teacher" placeholder="Enter Teacher Name"/>
+    </div>
+    <input type="submit" class= "btn btn-default btn-success" value="Add New Class"/>
 </form>
 
 <a href="/classstore">View Class List</a>
