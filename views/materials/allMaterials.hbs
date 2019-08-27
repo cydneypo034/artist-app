@@ -2,12 +2,14 @@
 <p>Have a favorite material you like to create art with? Click on "Add New Material" to enter your most prized possession. </p>
 </div>
 
-<a href="/materialstore/createMaterials">Add New Material</a>
+<div class="text-center">
+<a href="/materialstore/createMaterials" class= "btn btn-default">Add New Material</a>
+</div>
 
 {{#each materials}}
 <div>
 
-    <p>
+    <p class="text-center">
         <a href="./materialstore/{{_id}}">{{type}}</a>
     </p>
 
