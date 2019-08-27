@@ -3,17 +3,19 @@
 </div>
 
 
-<a href="/artstore/createStore">Add New Store</a>
+<div class="text-center">
+<a href="/artstore/createStore" class= "btn btn-default">Add New Store</a>
 
-<br>
+<a href="/materialstore/createMaterials" class= "btn btn-default">Add New Material</a>
+</div>
 
-<a href="/materialstore/createMaterials">Add New Material</a>
+
     
 
 
 <div>
     {{#each stores}}
-    <p class="text-right">
+    <p class="text-center">
        <a href="/artstore/{{_id}}">{{name}}</a>
        <br>
        <a href="/classstore/createClass">Add Class for this Store.</a>
