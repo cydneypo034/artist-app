@@ -1,6 +1,6 @@
 
-<div class="jumbotron">
-  <p>Welcome to The Artist's Pocket! Our mission is to help get more exposure to local art stores within the state of Georgia. Click on the "Add New Store" button to enter an art store in your city. </p>
+<div class="intro-font">
+<p class="text-center">Welcome to The Artist's Pocket! Our mission is to help get more exposure to local art stores within the state of Georgia. Click on the "Add New Store" button to enter an art store in your city. </p>
 </div>
 
 
@@ -11,14 +11,16 @@
 </div>
 
 
+<br>
 
-
-<div class="col-lrg-3 col-md">
+<div class="listed-items">
     {{#each stores}}
+    <div class="inner-text">
     <p class="text-center">
        <a href="/artstore/{{_id}}">{{name}}</a>
        <br>
-       <a href="/classstore/createClass">Add Class for this Store.</a>
+       <a href="/classstore/createClass" class= "btn btn-default">Add Class for this Store.</a>
     </p>
+    </div>
     {{/each}}
 </div>
