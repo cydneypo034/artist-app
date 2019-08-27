@@ -1,5 +1,5 @@
-<div class="jumbotron">
-<p>This is the class page! Enter a class or two... or ten that your art store teaches.</p>
+<div class="intro-font">
+<p class="text-center">This is the class page! Enter a class or two... or ten that your art store teaches.</p>
 </div>
 
 <div class="text-center">
@@ -8,10 +8,16 @@
 <a href="/classstore/createClass" class= "btn btn-default">Add New Class</a>
 </div>
 
+<br>
+
+<div class="listed-items">
 <div>
     {{#each classes}}
+    <div class="inner-text">
     <p class="text-center">
        <a href="./classstore/{{_id}}">{{nameOfClass}}</a> 
     </p>
+    </div>
     {{/each}}
+</div>
 </div>
