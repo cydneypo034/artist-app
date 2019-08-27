@@ -1,3 +1,4 @@
+<div class="intro-font">
 <h2>Class: {{oneclass.nameOfClass}}</h2>
 
 <p>Name of Class: {{oneclass.nameOfClass}}</p>
@@ -5,13 +6,16 @@
 <p>Minutes Duration: {{oneclass.minutesDuration}}</p>
 <p>Website: {{oneclass.website}}</p>
 <p>Teacher: {{oneclass.teacher}}</p>
+</div>
 
 <form method="POST" action="/classstore/{{oneclass._id}}/?_method=DELETE">
     <input type="submit" class= "btn btn-default" value="Delete Class"/>
 </form>
 
-<a href="/artstore">View All Stores</a>
+<br>
 
-<a href="/classstore">View All Classes</a>
+<a href="/artstore" class="btn btn-default btn-warning">View All Stores</a>
 
-<a href="/classstore/{{oneclass._id}}/edit">Edit This Class</a>
+<a href="/classstore" class="btn btn-default btn-info">View All Classes</a>
+
+<a href="/classstore/{{oneclass._id}}/edit" class="btn btn-default btn-success">Edit This Class</a>
