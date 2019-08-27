@@ -1,4 +1,5 @@
 
+<div class="intro-font">
 <h2>Store: {{store.name}}</h2>
 
 <p>Name: {{store.name}}</p>
@@ -6,6 +7,7 @@
 <p>Years Open: {{store.yearsOpen}}</p>
 <p>Website: {{store.website}}</p>
 <p>Available Classes: {{store.availableClasses}}</p>
+</div>
 
 <form method="POST" action="/artstore/{{store._id}}/?_method=DELETE">
     <input type="submit" class= "btn btn-default" value="Delete Store"/>
