@@ -1,19 +1,21 @@
 
-
+<div class="intro-font">
 <h2>Material: {{material.type}}</h2>
 
 <p>Type: {{material.type}}</p>
 <p>Quantity: {{material.quantity}}</p>
 <p>Brand Name: {{material.brandName}}</p>
 <p>Cost: {{material.cost}}</p>
+</div>
 
 <form method="POST" action="/materialstore/{{material._id}}?_method=DELETE">
     <input type="submit" class= "btn btn-default" value="Delete Material"/>
 </form>
 
+<br>
 
-<a href="/materialstore">View All Materials</a>
-<br>
-<a href="/artstore">View All Stores</a>
-<br>
-<a href="/materialstore/{{material._id}}/edit">Edit This Material</a>
+<a href="/artstore" class="btn btn-default btn-warning">View All Stores</a>
+
+<a href="/materialstore" class="btn btn-default btn-info">View All Materials</a>
+
+<a href="/materialstore/{{material._id}}/edit" class="btn btn-default btn-success">Edit This Material</a>
