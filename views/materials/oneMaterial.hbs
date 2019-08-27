@@ -9,13 +9,13 @@
 </div>
 
 <form method="POST" action="/materialstore/{{material._id}}?_method=DELETE">
-    <input type="submit" class= "btn btn-default" value="Delete Material"/>
+    <input type="submit" class= "btn btn-default btn-danger" value="Delete Material"/>
 </form>
 
 <br>
 
 <a href="/artstore" class="btn btn-default btn-warning">View All Stores</a>
 
-<a href="/materialstore" class="btn btn-default btn-info">View All Materials</a>
+<a href="/materialstore" class="btn btn-default btn-warning">View All Materials</a>
 
-<a href="/materialstore/{{material._id}}/edit" class="btn btn-default btn-success">Edit This Material</a>
+<a href="/materialstore/{{material._id}}/edit" class="btn btn-default btn-warning">Edit This Material</a>
