@@ -1,19 +1,29 @@
+<div class="intro-font">
+<p class="text-center">Click on "Save Class" once you're done making your new class or editting an old one. </p>
+</div>
+
 <form method="POST" action="/classstore/{{classeditId._id}}/editclass/?_method=PUT">
+<div id="form-text">
+    <div class="form-group">
     <label for="nameOfClass">Name of Class</label>
-    <input type="text" name="nameOfClass" value="{{oneclass.nameOfClass}}"/>
-
+    <input type="text" name="nameOfClass" value="{{oneclass.nameOfClass}}" placeholder="Enter Name of Class"/>
+    </div>
+    <div class="form-group">
     <label for="nameOfStore">Name of Store</label>
-    <input type="text" name="nameOfStore" value="{{oneclass.nameOfStore}}"/>
-
+    <input type="text" name="nameOfStore" value="{{oneclass.nameOfStore}}" placeholder="Enter Name of Store"/>
+    </div>
+    <div class="form-group">
     <label for="minutesDuration">Minutes Duration</label>
-    <input type="text" name="minutesDuration" value="{{oneclass.minutesDuration}}"/>
-
+    <input type="text" name="minutesDuration" value="{{oneclass.minutesDuration}}" placeholder="Ex: 60 minutes"/>
+    </div>
+    <div class="form-group">
     <label for="website">Website</label>
-    <input type="text" name="website" value="{{oneclass.website}}"/>
-
+    <input type="text" name="website" value="{{oneclass.website}}" placeholder="Ex: www.storesite.com"/>
+    </div>
+    <div class="form-group">
     <label for="teacher">Teacher</label>
-    <input type="text" name="teacher" value="{{oneclass.teacher}}"/>
-
-    <input type="submit" class= "btn btn-default" value="Save Material" />
-
+    <input type="text" name="teacher" value="{{oneclass.teacher}}" placeholder="Enter Teacher Name"/>
+    </div>
+    <input type="submit" class= "btn btn-default" value="Save Class" />
+</div>
 </form>
