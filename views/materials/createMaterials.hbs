@@ -1,8 +1,9 @@
-<div class="jumbotron">
+<div class="intro-font">
 <p>Enter your favorite material to use in your creations.</p>
 </div>
 
 <form method="POST" action="/materialstore/addmaterial"/>
+    <div id="form-text">
     <div class="form-group">
     <label for="type">Type</label>
     <input type="text" name="type" placeholder="Ex. Paintbrush" />
@@ -19,7 +20,7 @@
     <label for="cost">Cost</label>
     <input type="number" name="cost" placeholder="Enter Number Only"/>
     </div>
-
+    </div>
     <input type="submit" class= "btn btn-default btn-success" value="Add New Material"/>
 </form>
 
