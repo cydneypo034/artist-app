@@ -21,4 +21,4 @@
 
 [Wireframe Images](https://marvelapp.com/project/4287957/)
 
-![ERD Image](./images/PaintAppERD.png)
+![ERD Image](PaintAppERD.png)
