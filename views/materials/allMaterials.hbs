@@ -1,19 +1,23 @@
-
-<p>Have a favorite material you like to create art with? Click on "Add New Material" to enter your most prized possession. </p>
-
+<div class="intro-font">
+<p class="text-center">Have a favorite material you like to create art with? Click on "Add New Material" to enter your most prized possession. </p>
+</div>
 
 <div class="text-center">
 <a href="/materialstore/createMaterials" class= "btn btn-default">Add New Material</a>
+<a href="/artstore" class= "btn btn-default">View All Stores</a>
 </div>
 
+<br>
+
+<div class="listed-items">
 {{#each materials}}
 <div>
-
+    <div class="inner-text">
     <p class="text-center">
         <a href="./materialstore/{{_id}}">{{type}}</a>
     </p>
-
+    </div>
 </div>
 {{/each}}
+</div>
 
-<a href="/artstore">View All Stores</a>
