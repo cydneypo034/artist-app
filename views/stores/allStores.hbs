@@ -1,13 +1,13 @@
-
 <div class="intro-font">
-<p class="text-center">Welcome to The Artist's Pocket! Our mission is to help get more exposure to local art stores within the state of Georgia. Click on the "Add New Store" button to enter an art store in your city. </p>
+    <p class="text-center">Welcome to The Artist's Pocket! Our mission is to help art stores get more exposure
+        within the state of Georgia. Click on the "Add New Store" button to enter an art store you know and explore the ones that look new to you. </p>
 </div>
 
 
 <div class="text-center">
-<a href="/artstore/createStore" class= "btn btn-default">Add New Store</a>
+    <a href="/artstore/createStore" class="btn btn-default btn-warning">Add New Store</a>
 
-<a href="/materialstore/createMaterials" class= "btn btn-default">Add New Material</a>
+    <a href="/materialstore/createMaterials" class="btn btn-default btn-warning">Add New Material</a>
 </div>
 
 
@@ -16,11 +16,11 @@
 <div class="listed-items">
     {{#each stores}}
     <div class="inner-text">
-    <p class="text-center">
-       <a href="/artstore/{{_id}}">{{name}}</a>
-       <br>
-       <a href="/classstore/createClass" class= "btn btn-default">Add Class for this Store.</a>
-    </p>
+        <p class="text-center">
+            <a href="/artstore/{{_id}}">{{name}}</a>
+            <br>
+            <a href="/classstore/createClass" class="btn btn-default btn-sm">Add Class for this Store.</a>
+        </p>
     </div>
     {{/each}}
 </div>
