@@ -17,7 +17,7 @@
 
 ---
 
-[**Deployed Application**](www.google.com)
+[**Deployed Application**](https://vast-dusk-81442.herokuapp.com/artstore)
 
 [Project Board](https://github.com/users/cydneypo034/projects/3)
 
